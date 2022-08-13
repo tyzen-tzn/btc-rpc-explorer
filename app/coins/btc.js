@@ -14,15 +14,15 @@ for (let i = 1; i < 34; i++) {
 const currencyUnits = [
 	{
 		type:"native",
-		name:"BTC",
+		name:"TZN",
 		multiplier:1,
 		default:true,
-		values:["", "btc", "BTC"],
+		values:["", "tzn", "TZN"],
 		decimalPlaces:8
 	},
 	{
 		type:"native",
-		name:"mBTC",
+		name:"mTZN",
 		multiplier:1000,
 		values:["mbtc"],
 		decimalPlaces:5
@@ -60,19 +60,19 @@ const currencyUnits = [
 ];
 
 module.exports = {
-	name:"Bitcoin",
-	ticker:"BTC",
+	name:"Tyzen",
+	ticker:"TZN",
 	logoUrlsByNetwork:{
-		"main":"./img/network-mainnet/logo.svg",
-		"test":"./img/network-testnet/logo.svg",
-		"regtest":"./img/network-regtest/logo.svg",
-		"signet":"./img/network-signet/logo.svg"
+		"main":"https://www.tyzen.io/images/tyzen-logo-new.png",
+		"test":"https://www.tyzen.io/images/tyzen-logo-new.png",
+		"regtest":"https://www.tyzen.io/images/tyzen-logo-new.png",
+		"signet":"https://www.tyzen.io/images/tyzen-logo-new.png"
 	},
 	coinIconUrlsByNetwork:{
-		"main":"./img/network-mainnet/coin-icon.svg",
-		"test":"./img/network-testnet/coin-icon.svg",
-		"signet":"./img/network-signet/coin-icon.svg",
-		"regtest":"./img/network-regtest/coin-icon.svg"
+		"main":"https://www.tyzen.io/images/tyzen-logo-new.png",
+		"test":"https://www.tyzen.io/images/tyzen-logo-new.png",
+		"signet":"https://www.tyzen.io/images/tyzen-logo-new.png",
+		"regtest":"https://www.tyzen.io/images/tyzen-logo-new.png"
 	},
 	coinColorsByNetwork: {
 		"main": "#F7931A",
@@ -81,26 +81,24 @@ module.exports = {
 		"regtest": "#777"
 	},
 	siteTitlesByNetwork: {
-		"main":"Bitcoin Explorer",
+		"main":"Tyzen Explorer",
 		"test":"Testnet Explorer",
 		"regtest":"Regtest Explorer",
 		"signet":"Signet Explorer",
 	},
 	demoSiteUrlsByNetwork: {
-		"main": "https://bitcoinexplorer.org",
-		"test": "https://testnet.bitcoinexplorer.org",
-		"signet": "https://signet.bitcoinexplorer.org",
+		"main": "https://www.tyzen.live",
+		"test": "https://testnet.tyzen.live",
+		"signet": "https://signet.tyzen.live",
 	},
 	knownTransactionsByNetwork: {
-		main: "f4184fc596403b9d638783cf57adfe4c75c605f6356fbc91338530e9831e9e16",
+		main: "3f8dfaba1f9e8b0f8fa1a60e96d704a15ae62ec06d02b7c5938cb52ced34bbca",
 		test: "22e7e860660f368b5c653c272b0445a0625d19fdec02fc158ef9800a5c3a07e8",
 		signet: "39332e10af6fe491e8ae4ba1e2dd674698fedf8aa3c8c42bf71572debc1bb5b9"
 	},
 	miningPoolsConfigUrls:[
-		"https://raw.githubusercontent.com/btc21/Bitcoin-Known-Miners/master/miners.json",
-		"https://raw.githubusercontent.com/0xB10C/known-mining-pools/master/pools.json",
-		"https://raw.githubusercontent.com/btccom/Blockchain-Known-Pools/master/pools.json",
-		"https://raw.githubusercontent.com/blockchain/Blockchain-Known-Pools/master/pools.json"
+		"https://raw.githubusercontent.com/tyzen-tzn/Tyzen-Known-Miners/master/miners.json",
+		"https://raw.githubusercontent.com/tyzen-tzn/Tyzen-Known-Miners/master/pools.json"
 	],
 	maxBlockWeight: 4000000,
 	maxBlockSize: 1000000,
@@ -108,24 +106,24 @@ module.exports = {
 	minTxWeight: 166 * 4, // hack
 	difficultyAdjustmentBlockCount: 2016,
 	maxSupplyByNetwork: {
-		"main": new Decimal(20999817.31308491), // ref: https://bitcoin.stackexchange.com/a/38998
+		"main": new Decimal(100000000), // ref: https://bitcoin.stackexchange.com/a/38998
 		"test": new Decimal(21000000),
 		"regtest": new Decimal(21000000),
 		"signet": new Decimal(21000000)
 	},
-	targetBlockTimeSeconds: 600,
-	targetBlockTimeMinutes: 10,
+	targetBlockTimeSeconds: 90,
+	targetBlockTimeMinutes: 1,
 	currencyUnits:currencyUnits,
-	currencyUnitsByName:{"BTC":currencyUnits[0], "mBTC":currencyUnits[1], "bits":currencyUnits[2], "sat":currencyUnits[3]},
+	currencyUnitsByName:{"TZN":currencyUnits[0], "mTZN":currencyUnits[1], "bits":currencyUnits[2], "sat":currencyUnits[3]},
 	baseCurrencyUnit:currencyUnits[3],
 	defaultCurrencyUnit:currencyUnits[0],
 	feeSatoshiPerByteBucketMaxima: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 25, 50, 75, 100, 150],
 	
 	halvingBlockIntervalsByNetwork: {
-		"main": 210000,
-		"test": 210000,
+		"main": 950000,
+		"test": 950000,
 		"regtest": 150,
-		"signet": 210000
+		"signet": 950000
 	},
 
 	// used for supply estimates that don't need full gettxoutset accuracy
@@ -137,17 +135,17 @@ module.exports = {
 	},
 
 	utxoSetCheckpointsByNetwork: {
-		"main": {"height":702329,"bestblock":"00000000000000000005d323e8b476eac408e88002591b5ed7381ec9baaf2d13","transactions":45854214,"txouts":75356871,"bogosize":5640223435,"hash_serialized_2":"727879e512dde3c87ec4b3b4185d8212506a5eee517694a34785c0a63a7d78b9","disk_size":4582442992,"total_amount":"18826856.29247566","lastUpdated":1632692076775}
+		"main": {"height":30000,"bestblock":"327920481cd9157fc079e043b437a720fa53d159398da721f76f9d9cf3acbed1","transactions":1,"txouts":1,"bogosize":5640223435,"hash_serialized_2":"727879e512dde3c87ec4b3b4185d8212506a5eee517694a34785c0a63a7d78b9","disk_size":4582442992,"total_amount":"50","lastUpdated":1659091696}
 	},
 	
 	genesisBlockHashesByNetwork:{
-		"main":	"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+		"main":	"327920481cd9157fc079e043b437a720fa53d159398da721f76f9d9cf3acbed1",
 		"test":	"000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943",
 		"regtest": "0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206",
 		"signet":  "00000008819873e925422c1ff0f99f7cc9bbb232af63a077a480a3633bee1ef6", 
 	},
 	genesisCoinbaseTransactionIdsByNetwork: {
-		"main":	"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
+		"main":	"207679d613c20e2d4d5377148793076bf34df23040b6966a2f217077afb98e4c",
 		"test":	"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
 		"regtest": "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
 		"signet":  "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
@@ -155,12 +153,12 @@ module.exports = {
 	genesisCoinbaseTransactionsByNetwork:{
 		"main": {
 			"hex": "01000000010000000000000000000000000000000000000000000000000000000000000000ffffffff0804ffff001d02fd04ffffffff0100f2052a01000000434104f5eeb2b10c944c6b9fbcfff94c35bdeecd93df977882babc7f3a2cf7f5c81d3b09a68db7f0e04f21de5d4230e75e6dbe7ad16eefe0d4325a62067dc6f369446aac00000000",
-			"txid": "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
-			"hash": "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
+			"txid": "207679d613c20e2d4d5377148793076bf34df23040b6966a2f217077afb98e4c",
+			"hash": "327920481cd9157fc079e043b437a720fa53d159398da721f76f9d9cf3acbed1",
 			"size": 204,
 			"vsize": 204,
 			"version": 1,
-			"confirmations":475000,
+			"confirmations":13514,
 			"vin": [
 				{
 					"coinbase": "04ffff001d0104455468652054696d65732030332f4a616e2f32303039204368616e63656c6c6f72206f6e206272696e6b206f66207365636f6e64206261696c6f757420666f722062616e6b73",
@@ -501,18 +499,18 @@ module.exports = {
 	genesisCoinbaseOutputAddressScripthash:"8b01df4e368ea28f8dc0423bcf7a4923e3a12d307c875e47a0cfbf90b5c39161",
 	historicalData: btcFun.items,
 	exchangeRateData:{
-		jsonUrl:"https://api.coindesk.com/v1/bpi/currentprice.json",
+		jsonUrl:"https://www.exbitron.com/api/v2/peatio/public/markets/tznusdt/tickers",
 		responseBodySelectorFunction:function(responseBody) {
 			//console.log("Exchange Rate Response: " + JSON.stringify(responseBody));
 
-			var exchangedCurrencies = ["USD", "GBP", "EUR"];
+			var exchangedCurrencies = ["USDT"];
 
 			if (responseBody.bpi) {
 				var exchangeRates = {};
 
 				for (var i = 0; i < exchangedCurrencies.length; i++) {
 					if (responseBody.bpi[exchangedCurrencies[i]]) {
-						exchangeRates[exchangedCurrencies[i].toLowerCase()] = responseBody.bpi[exchangedCurrencies[i]].rate_float;
+						exchangeRates[exchangedCurrencies[i].toLowerCase()] = responseBody.bpi[exchangedCurrencies[i]].last;
 					}
 				}
 
